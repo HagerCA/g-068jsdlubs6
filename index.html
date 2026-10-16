@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Soul Family Alchemy Lab · Christopher × SAGE</title>
+
+<!-- Built 2026-10-16 on Christopher's ask. Source lives in 99-Local (gitignored). Published quietly on his word the same day: noindex here plus robots.txt Disallow. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+<meta name="author" content="Christopher Hager">
+<meta name="description" content="The Soul Family Alchemy Lab. Everything Christopher Hager and SAGE make for other people, in one place.">
+<meta name="theme-color" content="#1B0C20">
+
+<style>
+@font-face{font-family:'Space Grotesk';src:url('./fonts/SpaceGrotesk-a57c9413.woff2') format('woff2');font-weight:300 700;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('./fonts/DMSans-f6298972.woff2') format('woff2');font-weight:100 1000;font-display:swap;}
+@font-face{font-family:'Instrument Serif';src:url('./fonts/InstrumentSerif-99cc6edf.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Instrument Serif';src:url('./fonts/InstrumentSerif-fa1a1a83.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap;}
+
+:root{
+  --crown:#1B0C20; --crown-2:#2A1130; --mirror:#EFE7DA; --ankh:#A57626; --ankh-hi:#D9A648;
+  --triton:#7C2D50; --mystic:#3B1A4C; --gaia:#1D3237;
+  --display:'Instrument Serif',Georgia,serif;
+  --head:'Space Grotesk',"Helvetica Neue",Arial,sans-serif;
+  --body:'DM Sans',-apple-system,"Segoe UI",Roboto,sans-serif;
+  --spectrum-x:linear-gradient(to right,#C8242B 0%,#E8732A 17%,#F2C230 33%,#3FA86A 50%,#2C5FC4 67%,#5A47C2 83%,#9B5FD0 100%);
+  --navh:56px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--crown);color:var(--mirror);font-family:var(--body);font-size:17px;line-height:1.6;}
+a{color:inherit;}
+.wide{max-width:1200px;margin:0 auto;padding:0 28px;}
+section{scroll-margin-top:calc(var(--navh) + 10px);}
+.dots{position:relative;}
+.dots::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(239,231,218,.09) 1px, transparent 1.2px);background-size:7px 7px;}
+.dots > *{position:relative;z-index:1;}
+
+/* ── Hero ───────────────────────────────────────────────────────────── */
+.hero{text-align:center;padding:64px 0 70px;overflow:hidden;
+  background:radial-gradient(ellipse 80% 70% at 50% 0%, rgba(229,139,176,.20) 0%, transparent 60%),
+             radial-gradient(ellipse 120% 100% at 50% 50%, #1B0C20 0%, #2A1130 55%, #1D3237 120%);}
+.hero .logo{width:190px;opacity:.95;margin-bottom:40px;}
+.circle{width:190px;height:190px;margin:0 auto 24px;display:block;overflow:visible;}
+.circle .orbit{transform-origin:95px 95px;animation:turn 40s linear infinite;}
+.circle .soul{animation:pulse 5s ease-in-out infinite;}
+@keyframes turn{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{opacity:.55;}50%{opacity:1;}}
+.circle .bub{animation:bub 4s ease-in infinite;opacity:0;}
+@keyframes bub{0%{transform:translateY(0);opacity:0;}15%{opacity:.95;}100%{transform:translateY(-30px);opacity:0;}}
+.kicker{font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--ankh-hi);margin:0 0 18px;}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,9.5vw,6.4rem);line-height:.95;letter-spacing:-.025em;margin:0;color:#fff;}
+h1 em{font-style:italic;color:var(--ankh-hi);}
+h1 .sf{display:block;font-size:.5em;font-style:italic;color:#E89AB4;letter-spacing:-.01em;margin-bottom:.15em;}
+.pair{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3.6vw,1.9rem);color:var(--ankh-hi);margin:16px 0 0;}
+.pair b{font-style:normal;font-family:var(--head);font-weight:500;font-size:.62em;letter-spacing:.06em;color:rgba(239,231,218,.55);margin:0 .35em;vertical-align:.12em;}
+.dek{max-width:33em;margin:24px auto 0;color:rgba(239,231,218,.78);font-size:1.04rem;}
+.stats{display:flex;justify-content:center;gap:0;margin:44px auto 0;max-width:620px;border-top:1px solid rgba(165,118,38,.3);border-bottom:1px solid rgba(165,118,38,.3);}
+.stat{flex:1;padding:18px 10px;}
+.stat + .stat{border-left:1px solid rgba(165,118,38,.3);}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:#fff;}
+.stat span{display:block;margin-top:8px;font-family:var(--head);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,231,218,.58);}
+
+/* ── Nav ────────────────────────────────────────────────────────────── */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(27,12,32,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(165,118,38,.28);}
+.topnav::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--spectrum-x);opacity:.85;}
+.topnav .in{max-width:1200px;margin:0 auto;height:var(--navh);display:flex;align-items:center;gap:4px;padding:0 18px;overflow-x:auto;scrollbar-width:none;}
+.topnav .in::-webkit-scrollbar{display:none;}
+.topnav img{width:22px;margin-right:12px;opacity:.9;}
+.topnav a.nl{flex:0 0 auto;text-decoration:none;font-family:var(--head);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,231,218,.64);padding:9px 13px;display:flex;gap:8px;align-items:center;position:relative;}
+.topnav a.nl i{width:8px;height:8px;border-radius:50%;background:var(--c);}
+.topnav a.nl:hover,.topnav a.nl.on{color:#fff;}
+.topnav a.nl.on::after{content:"";position:absolute;left:13px;right:13px;bottom:3px;height:1px;background:var(--c);}
+
+/* ── Rooms (one per person or family) ──────────────────────────────── */
+.room{padding:84px 0 40px;}
+.room-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:30px;border-bottom:1px solid rgba(239,231,218,.1);padding-bottom:22px;}
+.eyebrow{font-family:var(--head);font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--c);margin:0 0 10px;display:flex;align-items:center;gap:12px;}
+.eyebrow img{width:20px;opacity:.85;}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5.4vw,3.4rem);line-height:1.02;margin:0;color:#fff;letter-spacing:-.015em;}
+h2 em{font-style:italic;color:var(--c);}
+.room-head p{margin:12px 0 0;color:rgba(239,231,218,.7);max-width:36em;}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.who span{font-family:var(--head);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 11px;border-radius:30px;border:1px solid var(--c);color:var(--c);}
+.room-head .count{font-family:var(--display);font-size:3.6rem;line-height:1;color:rgba(239,231,218,.16);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+
+.card{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#22102A;border:1px solid rgba(239,231,218,.08);
+  border-radius:4px;overflow:hidden;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s;
+}
+.card:hover,.card:focus-visible{transform:translateY(-6px);border-color:var(--a);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 0 1px var(--a),0 0 40px -10px var(--a);outline:none;}
+.cover{height:190px;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 110% at 50% 0%, var(--g1) 0%, transparent 72%), linear-gradient(160deg, var(--g2), #160A1A 85%);}
+.cover::after{content:"";position:absolute;inset:0;opacity:.45;background-image:radial-gradient(rgba(239,231,218,.11) 1px, transparent 1.2px);background-size:7px 7px;}
+.cover svg{position:absolute;inset:0;margin:auto;width:100%;height:100%;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+.card:hover .cover svg{transform:scale(1.06);}
+.tag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--head);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:5px 9px;border-radius:30px;background:rgba(27,12,32,.7);color:rgba(239,231,218,.78);border:1px solid rgba(239,231,218,.16);}
+.tag.new{background:var(--ankh-hi);color:var(--crown);border-color:var(--ankh-hi);}
+.tag.wip{background:rgba(232,154,180,.16);color:#F2B6CB;border-color:rgba(232,154,180,.5);}
+.body{padding:22px 22px 20px;display:flex;flex-direction:column;flex:1;}
+.body small{font-family:var(--head);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--a);font-weight:600;}
+.body h3{font-family:var(--display);font-weight:400;font-size:1.85rem;line-height:1.05;margin:8px 0 10px;color:#fff;}
+.body p{margin:0 0 16px;font-size:.95rem;line-height:1.55;color:rgba(239,231,218,.72);flex:1;}
+.go{font-family:var(--head);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ankh-hi);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(239,231,218,.08);padding-top:14px;}
+.go span{transition:transform .3s;}
+.card:hover .go span{transform:translateX(5px);}
+
+.card.feature{grid-column:span 2;flex-direction:row;}
+.card.feature .cover{height:auto;flex:1.15;min-height:320px;}
+.card.feature .body{flex:1;justify-content:center;padding:34px 34px 28px;}
+.card.feature h3{font-size:2.6rem;}
+.card.feature p{flex:0 1 auto;font-size:1.02rem;}
+
+.card.soon{border-style:dashed;border-color:rgba(239,231,218,.2);background:transparent;cursor:default;}
+.card.soon:hover{transform:none;box-shadow:none;border-color:rgba(239,231,218,.3);}
+.card.soon .go{color:rgba(239,231,218,.5);}
+
+/* ── Close + footer ────────────────────────────────────────────────── */
+.close{text-align:center;padding:110px 0 100px;margin-top:60px;background:radial-gradient(ellipse 120% 120% at 50% 20%, #2A1130 0%, #1B0C20 60%, #1D3237 150%);}
+.close img{width:34px;opacity:.9;margin-bottom:24px;}
+.close p.big{font-family:var(--display);font-size:clamp(1.7rem,4.4vw,2.6rem);line-height:1.2;color:#fff;max-width:20em;margin:0 auto;}
+.close p.big em{color:var(--ankh-hi);}
+.close p.by{margin-top:22px;font-family:var(--head);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(239,231,218,.55);}
+footer{background:#120714;text-align:center;padding:50px 28px 56px;color:rgba(239,231,218,.58);font-size:.9rem;}
+footer img{width:44px;opacity:.85;}
+footer .promise{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--ankh-hi);margin:12px 0 4px;}
+footer a{color:#fff;}
+
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .card.feature{grid-column:span 2;}
+}
+@media (max-width:660px){
+  .grid{grid-template-columns:1fr;}
+  .card.feature{grid-column:auto;flex-direction:column;}
+  .card.feature .cover{min-height:220px;}
+  .card.feature h3{font-size:2.1rem;}
+  .room-head{grid-template-columns:1fr;}
+  .room-head .count{display:none;}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header class="hero dots" id="top">
+  <div class="wide">
+    <img class="logo" src="./assets/logo-inline-light.png" alt="Christopher Hager">
+    <svg class="circle" viewBox="0 0 190 190" aria-hidden="true" id="circle"></svg>
+    <p class="kicker">For the people I walk with</p>
+    <h1><span class="sf">The Soul Family</span>Alchemy <em>Lab</em></h1>
+    <p class="pair">Christopher <b>×</b> SAGE</p>
+    <p class="dek">Everything we make for other people, in one place. Readings, blueprints and the pages built for one person or one family at a time. A room opens here for every soul who comes through.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<nav class="topnav" aria-label="People"><div class="in" id="nav"></div></nav>
+
+<main id="rooms"></main>
+
+<section class="close dots">
+  <div class="wide">
+    <img src="./assets/ankh-light.png" alt="">
+    <p class="big">"Every page in here was made for <em>one person</em>."</p>
+    <p class="by" id="next"></p>
+  </div>
+</section>
+
+<footer>
+  <img src="./assets/mark-light.png" alt="Christopher Hager">
+  <p class="promise">Tap the Wisdom of your Higher Self</p>
+  <p><a href="https://www.cahager.com/">cahager.com</a></p>
+</footer>
+
+<script>
+const B = 'https://hagerca.github.io/';
+
+/* Cover art: small line drawings in gold on the crown. */
+const ART = {
+  book: `<svg viewBox="0 0 300 190"><path d="M150 50 C 120 36 86 36 62 44 V150 C 86 142 120 142 150 156 Z" fill="#2A1130" stroke="#D9A648" stroke-width="1.6"/><path d="M150 50 C 180 36 214 36 238 44 V150 C 214 142 180 142 150 156 Z" fill="#3B1A4C" stroke="#D9A648" stroke-width="1.6"/>${[66,80,94,108,122].map(y=>`<line x1="76" x2="136" y1="${y}" y2="${y-2}" stroke="#EFE7DA" stroke-opacity=".25"/>`).join('')}<circle cx="194" cy="96" r="22" fill="none" stroke="#F7D46A" stroke-width="1.4"/><circle cx="194" cy="96" r="4" fill="#F7D46A"/></svg>`,
+  wheel: `<svg viewBox="0 0 300 190"><circle cx="150" cy="95" r="78" fill="none" stroke="#D9A648" stroke-width="1.6"/><circle cx="150" cy="95" r="60" fill="none" stroke="#D9A648" stroke-opacity=".5"/><circle cx="150" cy="95" r="26" fill="none" stroke="#D9A648" stroke-opacity=".35"/>${Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return `<line x1="${150+60*Math.cos(a)}" y1="${95+60*Math.sin(a)}" x2="${150+78*Math.cos(a)}" y2="${95+78*Math.sin(a)}" stroke="#D9A648" stroke-opacity=".7"/>`}).join('')}<path d="M110 70 L192 118 M120 128 L184 60 M108 104 L196 86" stroke="#E58BB0" stroke-opacity=".55"/>${[[110,70,'#F2C230'],[192,118,'#C8242B'],[120,128,'#8FB0F0'],[184,60,'#7FD6A2'],[108,104,'#CFAAF2'],[196,86,'#F5A066']].map(([x,y,c])=>`<circle cx="${x}" cy="${y}" r="4.5" fill="${c}"/>`).join('')}</svg>`,
+  seed: `<svg viewBox="0 0 300 190"><circle cx="150" cy="95" r="70" fill="none" stroke="#EFE7DA" stroke-opacity=".22" stroke-dasharray="3 7"/><circle cx="150" cy="95" r="44" fill="none" stroke="#D9A648" stroke-opacity=".3"/><path d="M150 128 C148 110 152 96 150 78" stroke="#7FD6A2" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M150 92 C138 88 132 80 131 70 C142 72 149 80 150 92Z M150 86 C160 80 166 72 168 62 C157 64 151 72 150 86Z" fill="#3FA86A" fill-opacity=".75"/><ellipse cx="150" cy="131" rx="11" ry="6" fill="#4A2A2E" stroke="#D9A648" stroke-width="1.2"/></svg>`,
+  family: `<svg viewBox="0 0 300 190"><circle cx="150" cy="95" r="62" fill="none" stroke="#D9A648" stroke-opacity=".35" stroke-dasharray="2 6"/><circle cx="150" cy="95" r="34" fill="none" stroke="#D9A648" stroke-opacity=".25"/>${[[150,33,'#F2C230',11,'Joe'],[212,95,'#E89AB4',11,'Vienna'],[150,157,'#7FD6A2',8,'Miley'],[88,95,'#8FB0F0',9,'Lucas']].map(([x,y,c,r,n])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/><circle cx="${x}" cy="${y}" r="${r+9}" fill="${c}" fill-opacity=".15"/><text x="${x+(x>150?26:x<150?-26:0)}" y="${y+(y<95?-20:y>95?30:4)}" text-anchor="${x>150?'start':x<150?'end':'middle'}" font-family="Space Grotesk,sans-serif" font-size="10" letter-spacing="2" fill="#EFE7DA" fill-opacity=".7">${n.toUpperCase()}</text>`).join('')}<path d="M150 79 c-12 -12 -24 0 -12 12 l12 12 l12 -12 c12 -12 0 -24 -12 -12z" fill="#D9A648"/></svg>`,
+  blueprint: `<svg viewBox="0 0 300 190">${Array.from({length:11},(_,i)=>`<line x1="${30+i*24}" y1="14" x2="${30+i*24}" y2="176" stroke="#8FB0F0" stroke-opacity=".14"/>`).join('')}${Array.from({length:7},(_,i)=>`<line x1="30" y1="${14+i*27}" x2="270" y2="${14+i*27}" stroke="#8FB0F0" stroke-opacity=".14"/>`).join('')}<path d="M70 150 A80 80 0 0 1 230 150" fill="none" stroke="#D9A648" stroke-opacity=".55" stroke-width="2.4"/><path d="M90 150 A60 60 0 0 1 210 150" fill="none" stroke="#7FD6A2" stroke-opacity=".4" stroke-width="1.4"/><line x1="50" y1="150" x2="250" y2="150" stroke="#D9A648" stroke-width="1.6"/><path d="M150 150 C148 128 153 108 150 82" stroke="#D9A648" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M150 118 C136 112 128 102 124 88 M150 106 C164 98 172 88 176 74 M150 96 C142 86 141 76 144 66" stroke="#7FD6A2" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 150 C142 160 128 166 112 174 M150 150 C158 160 172 166 188 174 M150 150 V178" stroke="#C8242B" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".85"/>${[[124,88,'#F2C230'],[176,74,'#E58BB0'],[144,66,'#8FB0F0'],[150,80,'#3FA86A']].map(([x,y,c])=>`<circle cx="${x}" cy="${y}" r="5" fill="${c}"/><circle cx="${x}" cy="${y}" r="11" fill="${c}" fill-opacity=".18"/>`).join('')}</svg>`
+};
+
+/*
+  One room per person or family. To add someone: push one object onto PEOPLE.
+  Card fields: t title, k kicker, d one line, u path under hagerca.github.io (live pages only),
+  art cover key, a accent, g1/g2 cover colors, feature wide card, isNew gold tag,
+  soon true for a page not built yet, with status (the tag) and note (the footer line).
+*/
+const PEOPLE = [
+ {id:'tyler', name:'Tyler Drake', em:'Tyzen', glyph:'horus', c:'#5FC0AE',
+  dek:'His design read three ways and woven into one story.',
+  cards:[
+   {t:'Know Thyself', k:'The reading · Tyler', d:'Astrology, Human Design and the Gene Keys woven into one story. The interactive wheel, the three lenses, a plate for every chapter and a field guide for any day.', u:'g-v1fqvwusvg9/', art:'book', a:'#5FC0AE', g1:'rgba(95,192,174,.3)', g2:'#1D3237', feature:true, isNew:true}
+  ]},
+ {id:'bubel', name:'The Bubel Family', em:'four charts, one house', glyph:'ankh', c:'#E89AB4',
+  who:['Joe','Vienna','Lucas','Miley'],
+  dek:'A family reading. Each of the four read on their own, then the family read together. The children’s sections are written to Joe and Vienna.',
+  cards:[
+   {t:'Know Thyself · The Bubel Family', k:'A Tuning Fork in a House of Waves', d:'Joe, Vienna, Lucas and Miley. Four charts, three lenses, and the threads running between them.', art:'family', a:'#E89AB4', g1:'rgba(232,154,180,.3)', g2:'#2A1130', feature:true, soon:true, status:'In progress', note:'Master sheet drafted · page next'}
+  ]},
+ {id:'nick', name:'Nick Koulermos', em:'Sacred Container', glyph:'water', c:'#7FD6A2',
+  dek:'His Soul Fam Blueprint, a living page that grows after every session, and his reading to come.',
+  cards:[
+   {t:'Soul Fam Blueprint', k:'Sacred Container · Living page', d:'Every session so far, latest first: what came through, his own words, the questions to sit with before the next one, and the threads running through all of it.', u:'g-phobywvcie5/', art:'blueprint', a:'#7FD6A2', g1:'rgba(127,214,162,.3)', g2:'#1D3237', feature:true, isNew:true},
+   {t:'Know Thyself', k:'The reading · Nick', d:'Astrology, Human Design and the Gene Keys, woven into one story.', art:'wheel', a:'#D9A648', g1:'rgba(217,166,72,.14)', g2:'#1B0C20', soon:true, status:'Coming', note:'Birth details needed'}
+  ]},
+ {id:'mia', name:'Mia Strickland', em:'Sacred Container', glyph:'crescent', c:'#CFAAF2',
+  dek:'Her room is open. The first page is in the making.',
+  cards:[
+   {t:'Know Thyself', k:'The reading · Mia', d:'Astrology, Human Design and the Gene Keys, woven into one story.', art:'wheel', a:'#CFAAF2', g1:'rgba(207,170,242,.14)', g2:'#1B0C20', soon:true, status:'Coming', note:'Birth details needed'}
+  ]},
+ {id:'ball', name:'Christopher Ball', em:'41 sessions', glyph:'sun', c:'#F2C230',
+  dek:'Fifteen months of sessions in one take-home, July 2025 to September 2026, and his reading to come.',
+  cards:[
+   {t:'Soul Fam Blueprint', k:'Six seasons · Living page', d:'Every season of our work, latest first: what came through, his own words, the practices, the questions to sit with, and nine threads running through all of it.', u:'g-ax65sbeo2nd/', art:'blueprint', a:'#F2C230', g1:'rgba(242,194,48,.26)', g2:'#2A1130', feature:true, isNew:true},
+   {t:'Know Thyself', k:'The reading · Christopher', d:'Astrology, Human Design and the Gene Keys, woven into one story.', art:'seed', a:'#F2C230', g1:'rgba(242,194,48,.14)', g2:'#1B0C20', soon:true, status:'Coming', note:'Birth details needed'}
+  ]}
+];
+
+const $ = s => document.querySelector(s);
+const all = PEOPLE.flatMap(p=>p.cards);
+const live = all.filter(c=>!c.soon).length;
+const souls = PEOPLE.reduce((n,p)=>n + (p.who ? p.who.length : 1), 0);
+$('#stats').innerHTML = `<div class="stat"><b>${live}</b><span>Live pages</span></div><div class="stat"><b>${all.length-live}</b><span>In the making</span></div><div class="stat"><b>${souls}</b><span>Souls</span></div>`;
+$('#nav').innerHTML = `<a href="#top" aria-label="Back to the top"><img src="./assets/mark-light.png" alt=""></a>` +
+  PEOPLE.map(p=>`<a class="nl" href="#${p.id}" style="--c:${p.c}"><i></i>${p.name}</a>`).join('');
+const waiting = PEOPLE.filter(p=>p.cards.every(c=>c.soon)).map(p=>p.name.replace(/^The /,''));
+$('#next').textContent = waiting.length ? `More on the way · ${waiting.join(', ')}` : 'More on the way';
+
+/* Hero: one light per soul, circling the flask. */
+(() => {
+  const cols = ['#5FC0AE','#F2C230','#E89AB4','#7FD6A2','#8FB0F0','#CFAAF2','#F5A066','#C8242B','#9B5FD0','#3FA86A'];
+  const n = souls, R = 80;
+  const pts = Array.from({length:n},(_,i)=>{const a=-Math.PI/2+i*2*Math.PI/n;return [95+R*Math.cos(a),95+R*Math.sin(a)];});
+  const thread = pts.map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ')+'Z';
+  $('#circle').innerHTML = `
+    <g class="orbit">
+      <circle cx="95" cy="95" r="${R}" fill="none" stroke="#D9A648" stroke-opacity=".25" stroke-dasharray="1 6"/>
+      <path d="${thread}" fill="none" stroke="#D9A648" stroke-opacity=".28"/>
+      ${pts.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="13" fill="${cols[i%cols.length]}" fill-opacity=".14"/><circle class="soul" cx="${x}" cy="${y}" r="5" fill="${cols[i%cols.length]}" style="animation-delay:${(i*.6).toFixed(1)}s"/>`).join('')}
+    </g>
+    <path d="M84 52 h22 M88 52 v20 L68 116 Q64 126 76 127 h38 Q126 126 122 116 L102 72 V52" fill="none" stroke="#D9A648" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <defs><linearGradient id="lq" x1="0" x2="1"><stop offset="0" stop-color="#E89AB4"/><stop offset=".5" stop-color="#F2C230"/><stop offset="1" stop-color="#5FC0AE"/></linearGradient>
+    <clipPath id="fc"><path d="M88 52 v20 L68 116 Q64 126 76 127 h38 Q126 126 122 116 L102 72 V52 z"/></clipPath></defs>
+    <g clip-path="url(#fc)">
+      <path d="M50 102 Q72 96 95 102 T140 100 V140 H50 Z" fill="url(#lq)" fill-opacity=".85"/>
+      <circle class="bub" cx="88" cy="118" r="2.4" fill="#fff" style="animation-delay:0s"/>
+      <circle class="bub" cx="100" cy="121" r="1.8" fill="#fff" style="animation-delay:1.4s"/>
+      <circle class="bub" cx="94" cy="116" r="2" fill="#fff" style="animation-delay:2.7s"/>
+    </g>`;
+})();
+
+function card(c){
+  const tag = c.soon ? `<span class="tag wip">${c.status||'Coming soon'}</span>` : c.isNew ? '<span class="tag new">New</span>' : '';
+  const inner = `<div class="cover" style="--g1:${c.g1};--g2:${c.g2}">${tag}${ART[c.art]}</div>
+    <div class="body"><small>${c.k}</small><h3>${c.t}</h3><p>${c.d}</p>
+    <div class="go">${c.soon?(c.note||'In the making'):'Open'}<span>${c.soon?'':'→'}</span></div></div>`;
+  return c.soon ? `<div class="card soon${c.feature?' feature':''}" style="--a:${c.a}">${inner}</div>`
+    : `<a class="card${c.feature?' feature':''}" href="${B}${c.u}" style="--a:${c.a}">${inner}</a>`;
+}
+$('#rooms').innerHTML = PEOPLE.map(p => `
+  <section class="room" id="${p.id}" style="--c:${p.c}">
+    <div class="wide">
+      <div class="room-head">
+        <div><p class="eyebrow"><img src="./assets/${p.glyph}-light.png" alt="">${p.em}</p><h2>${p.name}</h2><p>${p.dek}</p>${p.who?`<div class="who">${p.who.map(w=>`<span>${w}</span>`).join('')}</div>`:''}</div>
+        <div class="count">${String(p.cards.filter(c=>!c.soon).length).padStart(2,'0')}</div>
+      </div>
+      <div class="grid">${p.cards.map(card).join('')}</div>
+    </div>
+  </section>`).join('');
+
+/* Highlight the room in view. */
+const links = [...document.querySelectorAll('.topnav a.nl')];
+const pick = () => {
+  const y = scrollY + 120; let cur = null;
+  PEOPLE.forEach(p => { const el = document.getElementById(p.id); if(el.offsetTop <= y) cur = p.id; });
+  links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#'+cur));
+};
+addEventListener('scroll', () => requestAnimationFrame(pick), {passive:true}); pick();
+</script>
+</body>
+</html>
